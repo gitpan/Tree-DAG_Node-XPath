@@ -1,5 +1,13 @@
 Revision history for Perl extension Tree::Dag_Node::XPath.
 
+0.09 2008-10-09
+
+  - added docs for a few aliased methods, to keep Test::Pod::Coverage happy
+
+0.08 
+
+  - removed requirement for 5.8.4 (5.6 should be enough)
+
 0.06 2006-01-24
 
   - switched the module to using Tree::XPathEngine to remove

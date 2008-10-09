@@ -1,12 +1,12 @@
 package Tree::DAG_Node::XPath;
 
-require 5.005;
+require 5.006;
 use strict;
 use warnings;
 
 
 use vars qw(@ISA $VERSION);
-$VERSION="0.07";
+$VERSION="0.09";
 
 use base 'Tree::DAG_Node';
 use Tree::XPathEngine;
@@ -260,7 +260,20 @@ returns 0
 
 compares 2 nodes and returns their order in the tree
 
+=item xpath_get_name
+
+alias for name
+
+=item xpath_get_next_sibling
+
+alias for right_sister
+
+=item xpath_get_previous_sibling
+
+alias for left_sister
+
 =back
+
 
 =head1 CUSTOMIZATION
 
