@@ -6,7 +6,7 @@ use warnings;
 
 
 use vars qw(@ISA $VERSION);
-$VERSION="0.09";
+$VERSION="0.10";
 
 use base 'Tree::DAG_Node';
 use Tree::XPathEngine;
@@ -119,6 +119,12 @@ sub xpath_get_attributes    { return (); }
 sub xpath_is_document_node  { return 1   }
 sub xpath_is_element_node   { return 0   }
 sub xpath_is_attribute_node { return 0   }
+sub xpath_get_parent_node   { return; }
+sub xpath_get_root_node     { return $_[0] }
+sub xpath_get_name          { return; }
+sub xpath_get_next_sibling  { return; }
+sub xpath_get_previous_sibling { return; }
+
 
 1;
 

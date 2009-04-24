@@ -1,5 +1,10 @@
 Revision history for Perl extension Tree::Dag_Node::XPath.
 
+0.10 2009-04-24
+
+  - fixed bug rt #44248 (https://rt.cpan.org/Ticket/Display.html?id=44248)
+    bug found and patched by dakkar
+
 0.09 2008-10-09
 
   - added docs for a few aliased methods, to keep Test::Pod::Coverage happy

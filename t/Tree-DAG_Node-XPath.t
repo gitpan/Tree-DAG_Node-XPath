@@ -5,7 +5,7 @@
 #########################
 use strict;
 
-use Test::More tests => 115;
+use Test::More tests => 121;
 BEGIN { use_ok('Tree::DAG_Node::XPath') };
 
 #########################
@@ -116,7 +116,7 @@ ok( $root->xpath_is_element_node => "root is element node");
 my @root_atts= $root->xpath_get_attributes;
 is( $root_atts[0]->xpath_get_value => 'root', "->xpath_get_attributes in list context");
 my $root_atts= $root->xpath_get_attributes;
-is( $root->xpath_get_attributes => 1, "->xpath_get_attributes in scalar context");
+is( $root_atts => 1, "->xpath_get_attributes in scalar context");
 
 my $att= ($root->findnodes( '@id'))[0];
 ok( $att->xpath_is_attribute_node => "att is attribute node");
@@ -125,6 +125,12 @@ ok( !$att->xpath_is_element_node => "att is not element node");
 my $fake_root= $root->xpath_get_parent_node;
 ok( $fake_root->xpath_is_document_node => "fake root is not document node");
 ok( !$fake_root->xpath_is_element_node => "fake root is not element node");
+ok( !$fake_root->xpath_get_parent_node => "fake root does not have a parent");
+is( $fake_root->xpath_get_root_node, $fake_root, "fake root is its own root");
+ok( !$fake_root->xpath_get_attributes => "fake root has no attributes");
+ok( !defined($fake_root->xpath_get_name) => "fake root does not have a name");
+ok( !defined($fake_root->xpath_get_next_sibling) => "fake root does not have a next sibling");
+ok( !defined($fake_root->xpath_get_previous_sibling) => "fake root does not have a prev sibling");
 
 # testing methods to get nodes content
 is( $att->xpath_get_value => 'root', "root id attribute with ->xpath_get_value");
