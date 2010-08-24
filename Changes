@@ -1,5 +1,11 @@
 Revision history for Perl extension Tree::Dag_Node::XPath.
 
+0.11 2010-08-24
+
+  - fixed bug RT #60602 (https://rt.cpan.org/Ticket/Display.html?id=60602)
+    xpath_get_next/previous_sibling methods are aliased backwards found and
+    fix provided by trlorentz
+
 0.10 2009-04-24
 
   - fixed bug rt #44248 (https://rt.cpan.org/Ticket/Display.html?id=44248)

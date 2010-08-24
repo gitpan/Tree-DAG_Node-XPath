@@ -6,7 +6,7 @@ use warnings;
 
 
 use vars qw(@ISA $VERSION);
-$VERSION="0.10";
+$VERSION="0.11";
 
 use base 'Tree::DAG_Node';
 use Tree::XPathEngine;
@@ -69,8 +69,8 @@ sub matches {
 
 # Tree::XPathEngine method   aliased to   Tree::DAG_Node method
 *xpath_get_name                 =         *Tree::DAG_Node::name;
-*xpath_get_next_sibling         =         *Tree::DAG_Node::left_sister;
-*xpath_get_previous_sibling     =         *Tree::DAG_Node::right_sister;
+*xpath_get_next_sibling         =         *Tree::DAG_Node::right_sister;
+*xpath_get_previous_sibling     =         *Tree::DAG_Node::left_sister;
 
 sub xpath_get_root_node
   { my $node= shift;
@@ -119,10 +119,10 @@ sub xpath_get_attributes    { return (); }
 sub xpath_is_document_node  { return 1   }
 sub xpath_is_element_node   { return 0   }
 sub xpath_is_attribute_node { return 0   }
-sub xpath_get_parent_node   { return; }
+sub xpath_get_parent_node   { return;    }
 sub xpath_get_root_node     { return $_[0] }
-sub xpath_get_name          { return; }
-sub xpath_get_next_sibling  { return; }
+sub xpath_get_name          { return;    }
+sub xpath_get_next_sibling  { return;    }
 sub xpath_get_previous_sibling { return; }
 
 
